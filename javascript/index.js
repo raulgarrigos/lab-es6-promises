@@ -103,7 +103,39 @@ obtainInstruction("steak", 0)
   });
 
 // Iteration 3 using async/await
-// ...
+async function makeBroccoli() {
+  // ... Your code here
+  try {
+    let step0 = await obtainInstruction("broccoli", 0);
+    document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`;
+    console.log(step0);
+    let step1 = await obtainInstruction("broccoli", 1);
+    document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`;
+    console.log(step1);
+    let step2 = await obtainInstruction("broccoli", 2);
+    document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`;
+    console.log(step2);
+    let step3 = await obtainInstruction("broccoli", 3);
+    document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`;
+    console.log(step3);
+    let step4 = await obtainInstruction("broccoli", 4);
+    document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`;
+    console.log(step4);
+    let step5 = await obtainInstruction("broccoli", 5);
+    document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`;
+    console.log(step5);
+    let step6 = await obtainInstruction("broccoli", 6);
+    document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
+    console.log(step6);
+    let step7 = document.createElement("li")
+    step7.innerHTML = "Broccoli is ready"
+    document.getElementById("broccoli").appendChild(step7);
+    console.log(step7);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+makeBroccoli()
 // Bonus 2 - Promise all
 // ...
