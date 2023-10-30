@@ -96,6 +96,10 @@ obtainInstruction("steak", 0)
   })
   .then((step8) => {
     document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
+    let step9 = document.createElement("li");
+    step9.innerHTML = "Steak is ready";
+    document.getElementById("steak").appendChild(step9);
+    console.log(step9);
     return obtainInstruction("steak", 8);
   })
   .catch((error) => {
@@ -127,8 +131,8 @@ async function makeBroccoli() {
     let step6 = await obtainInstruction("broccoli", 6);
     document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
     console.log(step6);
-    let step7 = document.createElement("li")
-    step7.innerHTML = "Broccoli is ready"
+    let step7 = document.createElement("li");
+    step7.innerHTML = "Broccoli is ready";
     document.getElementById("broccoli").appendChild(step7);
     console.log(step7);
   } catch (error) {
@@ -136,6 +140,6 @@ async function makeBroccoli() {
   }
 }
 
-makeBroccoli()
+makeBroccoli();
 // Bonus 2 - Promise all
 // ...
