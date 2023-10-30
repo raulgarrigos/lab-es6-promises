@@ -141,5 +141,49 @@ async function makeBroccoli() {
 }
 
 makeBroccoli();
+
 // Bonus 2 - Promise all
-// ...
+
+Promise.all([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+])
+  .then((allResponses) => {
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[0]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[1]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[2]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[3]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[4]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[5]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[6]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${allResponses[7]}</li>`;
+    let step9 = document.createElement("li");
+    step9.innerHTML = "Brussels sprouts are ready!";
+    document.getElementById("brusselsSprouts").appendChild(step9);
+    console.log(allResponses);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
